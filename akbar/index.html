@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <title></title>
+</head>
+<body>
+    <header >
+        <div class="headermenu login" id="login">
+			<div class="register">
+             	<i class="fa fa-shopping-cart" ></i>
+                	<a href="signin.php"><i class="fa fa-sign-in">Login</i></a>
+                	<a href="ragistration.php"><i class="fa fa-user-plus" id="plus">Register</i></a>
+			</div>	
+                    <div class="logo">
+                   		<img src="images/logo-top.png">
+					</div>
+        					<nav>
+								<button id="panel" class = "icon" onclick="myfunction()"><i class="fa fa-bars"></i></button>		
+            						<div class="menu" id="flip">
+										<ul>
+                    						<li ><a href="header.php">Home</a></li>
+                    						<li><a href="about.php">About</a></li>
+                    						<li><a href="#">Cake Designs</a></li>
+                     						<li><a href="custom.php">Custom Cake</a></li>
+                    						<li><a href="Contactus.php">Contact Us</a></li>
+                						</ul>
+										
+                						<div class="hr">
+                							<hr class="w-55 mx-auto" color="gray" id="menubar" >
+                  						</div>
+            						</div>
+           					</nav>
+                <div class="slider"  align="center">
+                    <h4 data-animation="animated bounceInUp">The taste of our</h4>
+                   	<h1 data-animation="animated bounceInDown">Amazing Cakes</h1>
+                    <p>At Dessert Den, we produce the best custom-made delicious cakes for any occasion since 2011.<br> We decorate cake which is an art and we possess expertise in the same.</p>
+        		</div>
+		</div>
+		<!-- <script>
+			function myfunction(){
+				var icon = document.getElementById('flip');
+				console.log(icon);
+				if(icon.style.dispaly == 'block'){
+					icon.style.dispaly = "none";
+					console.log(icon);
+				}else{
+					icon.style.dispaly = "block";
+					console.log(icon);
+				}
+				console.log(icon);
+			}
+		</script>			 -->
+		 <script>
+		 $(document).ready(function(){
+		 	$("#panel").click(function(){
+		 	  $("#flip").slideToggle("slow");
+		 	});
+		   });
+		   </script> 
+
+    </header>
+</body>
+</html>   

@@ -1,0 +1,87 @@
+<?php
+
+session_start();
+
+?>
+<!DOCTYPE html>
+<html>
+<head>
+  <title>login page</title>
+   <meta charset="utf-8">
+     <meta name="viewport" content="width=device-width, initial-scale=1">
+     <link rel="stylesheet" type="text/css" href="signinstyle.css">
+     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+<body>
+
+  <?php
+
+  include 'dbconn.php';
+
+    if (isset($_POST['submit']))
+    {
+       $email = $_POST['email'];
+       $password = $_POST['password'];
+
+       $email_search = "select * from signin where email ='$email' ";
+       $query = mysqli_query($con,$email_search);
+     
+       $email_count = mysqli_num_rows($query);
+
+       if ($email_count) 
+       {
+          $email_pass = mysqli_fetch_assoc($query);
+
+          $db_pass = $email_pass['password'];
+
+          if ($db_pass) 
+          {
+            ?>
+              <script>
+                alert("login successful");
+              </script>  
+            <?php
+          }
+          else
+          {
+            ?>
+              <script>
+                alert("invalid password");
+              </script>  
+            <?php
+          }
+       }
+       else
+       {
+            ?>
+              <script>
+                alert("invalid email");
+              </script>  
+            <?php
+       }
+    }
+
+  ?>
+
+  <div class="main_div">
+    
+        <div class="box">
+          <h3>Login</h3>
+          <form method="POST" action="<?php echo($_SERVER['PHP_SELF']); ?>">
+            <div class="inputBox">
+              <input type="text" name="email" autocompate="off" required>
+              <label>Username or Email</label>
+            </div>
+            <div class="inputBox">
+              <input type="password" name="password" autocomplate="off" required>
+              <label>Password</label>
+            </div>
+
+            <input class="button" type="submit"  name="submit" value="Login">
+          </form>
+        </div>
+  </div>
+  
+ 
+</body>
+</html>
