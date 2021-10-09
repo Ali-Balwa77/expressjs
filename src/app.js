@@ -3,7 +3,7 @@ const app = express();
 const path = require('path');
 
 const staticpath = path.join(__dirname,'../akbar');
-
+console.log(staticpath)
 app.use(express.static(staticpath));
 
 app.get('',(req,res) => {
